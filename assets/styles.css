@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body header {
+    margin: 2rem;
+} 
+
+body header a {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    cursor: pointer;
+}
+
+body header p {
+    margin: 0 0.5rem;
+}
+
+
+body div {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+body div table {
+    margin: 0 8rem;
+}
+
+#dropdownMenuButton {
+    background: #fff;
+}
