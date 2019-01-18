@@ -1,10 +1,10 @@
 <?php
 
-$strHost = "172.27.0.97";           // Host Servidor
-$strUser = "app_sjccchamados";      // Usuario Banco            
-$strPass = "app_sjccchamados@123";  // Senha  
-$strBase = "SJCC_Chamados";         // Banco de dados
-$strType = "sqlsrv";                // Drive do banco
+$strHost = "localhost";   // Host Servidor
+$strUser = "tabela";      // Usuario Banco            
+$strPass = "tabela";      // Senha  
+$strBase = "tabela";      // Banco de dados
+$strType = "sqlsrv";      // Drive do banco
 
 // Monta a conexao
 $strDSN  = "{$strType}:Database={$strBase};Server={$strHost}";
