@@ -32,3 +32,8 @@ body div table {
 #dropdownMenuButton {
     background: #fff;
 }
+
+div > div > form > div.modal-body {
+    display: flex;
+    flex-direction: column;
+}

@@ -9,13 +9,13 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./assets/styles.css">
+    <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
     <header>
         <div>
             <a data-toggle="modal" data-target="#adicionar">
-                <img src="./assets/img/add.svg" alt="Adicionar">
+                <img src="/assets/img/add.svg" alt="Adicionar">
                 <p>Adicionar Clientes</p>
             </a>
         </div>
@@ -44,8 +44,8 @@
                             <img src="./assets//img/settings.svg" alt="Configuração">
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Alterar</a>
-                            <a class="dropdown-item" href="#">Excluir</a>
+                            <a class="dropdown-item" id="edit" href="/editar?nome=<?php echo $dado['A1_NOME']; ?>">Alterar</a>
+                            <a class="dropdown-item" id="delete" href="#" data-toggle="modal" data-target="#excluir">Excluir</a>
                         </div>
                     </div>
                 </td>
@@ -56,7 +56,7 @@
     </div>
 </table>
 
-<!-- Modal -->
+<!-- Modal Adicionar-->
 <div class="modal fade" id="adicionar" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -66,13 +66,33 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+        <form action="/?action=add" method="post">
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Nome</span>
+                    </div>
+                    <input type="text" name="nome" class="form-control" aria-label="Sizing example input" required aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Nome Reduzido</span>
+                    </div>
+                    <input type="text" name="nreduz" class="form-control" aria-label="Sizing example input" required aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Cidade</span>
+                    </div>
+                    <input type="text" name="cidade" class="form-control" aria-label="Sizing example input" required aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+      
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </div>
+        </form>
     </div>
   </div>
 </div>
