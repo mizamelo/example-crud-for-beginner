@@ -20,7 +20,7 @@ body header p {
 }
 
 
-body div {
+body div.listar {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -36,4 +36,8 @@ body div table {
 div > div > form > div.modal-body {
     display: flex;
     flex-direction: column;
+}
+
+body > div.container {
+    margin: 18rem auto; 
 }

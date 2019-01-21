@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Estudo | CRUD</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/assets/styles.css">
-</head>
-<body>
     <header>
         <div>
             <a data-toggle="modal" data-target="#adicionar">
@@ -20,7 +6,7 @@
             </a>
         </div>
     </header>
-    <div>
+    <div class="listar">
         <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -44,8 +30,8 @@
                             <img src="./assets//img/settings.svg" alt="Configuração">
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" id="edit" href="/editar?nome=<?php echo $dado['A1_NOME']; ?>">Alterar</a>
-                            <a class="dropdown-item" id="delete" href="#" data-toggle="modal" data-target="#excluir">Excluir</a>
+                            <a class="dropdown-item" id="edit" href="/editar?recno=<?php echo $dado['R_E_C_N_O_']; ?>">Alterar</a>
+                            <a class="dropdown-item" href="/?action=excluir&id=<?php echo $dado['R_E_C_N_O_']; ?>">Excluir</a>
                         </div>
                     </div>
                 </td>
@@ -54,7 +40,6 @@
         </tbody>
         </table>
     </div>
-</table>
 
 <!-- Modal Adicionar-->
 <div class="modal fade" id="adicionar" tabindex="-1" role="dialog" aria-hidden="true">
@@ -96,5 +81,3 @@
     </div>
   </div>
 </div>
-</body>
-</html>
